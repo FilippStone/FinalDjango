@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Рецептoff</title>
+</head>
+<body>
+<header>
+    <h1>Рецепты</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/editrecipe">Добавить\редактировать рецепт</a></li>
+            <ul>
+                <li><a href="/register">Регистрация</a></li>
+                <li><a href="/login">Авторизация</a></li>
+                <li><a href="/logout">Выход</a></li>
+            </ul>
+            </li>
+            <li><a href="/contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    <p>Все права защищены &copy; {{ 2023 }}</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Редактировать рецепт</h2>
+    <form action="{% url 'editrecipe' recipe.id %}" method="post">
+        {% csrftoken %}
+        {{ form.asp }}
+        <input type="submit" value="Сохранить">
+    </form>
+{% endblock %}
