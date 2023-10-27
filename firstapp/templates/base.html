@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+{% load bootstrap4 %}
+<html lang="ru">
 <head>
-    <title>Рецептoff</title>
+    <meta charset="UTF-8">
+    {% bootstrap_css %}
+    <title>{% block title %} Блог {% endblock %}</title>
 </head>
-<body>
-<header>
-    <h1>Рецепты</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/editrecipe">Добавить\редактировать рецепт</a></li>
-            <ul>
-                <li><a href="/register">Регистрация</a></li>
-                <li><a href="/login">Авторизация</a></li>
-                <li><a href="/logout">Выход</a></li>
-            </ul>
+<header class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-brand"></div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Главная</a>
             </li>
-            <li><a href="/contacts">Контакты</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="/edit">Редактировать рецепт</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add">Добавить рецепт</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Регистрация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Авторизация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/recipes">Рецепты</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/full">Подробный рецепт</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Выход</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -25,7 +45,6 @@
     {% endblock %}
 </main>
 <footer>
-    <p>Все права защищены &copy; {{ 2023 }}</p>
+    <p>Все права защищены &copy; {% now "Y" %}</p>
 </footer>
-</body>
 </html>

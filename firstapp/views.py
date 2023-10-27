@@ -19,7 +19,15 @@ def register(request):
 
 
 def edit_recipe(request):
-    return render(request, 'editrecipe.html')
+    return render(request, 'edit_recipe.html')
+
+
+def add_recipe(request):
+    return render(request, 'add_recipe.html')
+
+
+def full_recipe(request):
+    return render(request, 'full_recipe.html')
 
 
 def recipe_list(request):
