@@ -2,7 +2,8 @@
 
 {% block content %}
     <h2 style="color: #389cbd;">Авторизация</h2>
-    <form action="/login" method="post">
+    <form action="/login/" method="post">
+        {% csrf_token %}
         <input type="text" id="username" name="username" required placeholder="Логин"><br><br>
         <input type="password" id="password" name="password" required placeholder="Пароль"><br><br>
         <input type="checkbox" name="remember" value="" id="auth_remember_field">

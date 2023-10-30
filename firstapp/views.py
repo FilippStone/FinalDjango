@@ -31,13 +31,7 @@ def full_recipe(request):
 
 
 def recipe_list(request):
-    recipes = Recipe.objects.all()
-    categories = RecipeCategory.objects.all()
-    context = {
-        'recipes': recipes,
-        'categories': categories,
-    }
-    return render(request, 'recipe_list.html', context)
+    return render(request, 'recipe_list.html')
 
 
 def contacts(request):

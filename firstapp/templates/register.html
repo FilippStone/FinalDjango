@@ -2,7 +2,8 @@
 
 {% block content %}
     <h2 style="color: #389cbd;">Регистрация</h2>
-    <form action="/register" method="post">
+    <form action="/register/" method="post">
+        {% csrf_token %}
         <input type="text" id="username" name="username" required placeholder="Введите логин"><br><br>
         <input type="password" id="password" name="password" required placeholder="Введите пароль"><br><br>
         <input type="submit" value="Зарегистрироваться">

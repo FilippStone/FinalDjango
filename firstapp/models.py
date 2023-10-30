@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 class RecipeCategory(models.Model):
     name = models.CharField(max_length=255)
 
-    # Добавить другие поля
-
     def __str__(self):
         return self.name
 
@@ -20,8 +18,6 @@ class Recipe(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(RecipeCategory, through='RecipeCategoryRelation')
 
-    # Добавите другие поля
-
     def __str__(self):
         return self.name
 
@@ -29,4 +25,3 @@ class Recipe(models.Model):
 class RecipeCategoryRelation(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     category = models.ForeignKey(RecipeCategory, on_delete=models.CASCADE)
-    # Добавите другие поля
