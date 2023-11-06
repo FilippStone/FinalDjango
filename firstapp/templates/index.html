@@ -2,9 +2,17 @@
 
 {% block content %}
     <h2 style="color: #389cbd;">Рецепты дня</h2>
-    <ul>
-        {% for recipe in recipes %}
-            <li>{{ recipe.title }}</li>
-        {% endfor %}
-    </ul>
+    <div class="col-md-12">
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" width="100">
+                    <p><strong>Описание:</strong> {{ recipe.description| truncatewords:35}} </p>
+                    <p><strong>Ингредиенты:</strong> {{ recipe.ingredients|truncatewords:10 }}</p>
+                    <p><strong>Автор:</strong> {{ recipe.author }}</p>
+                    <p><a href="{% url 'recipe_list' %}">Список рецептов</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

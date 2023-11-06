@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&04bj_-)%j#^kj9&h=h3xkk-r#*je9!m!x52%%*cl$6x)0)ra4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = [
@@ -171,6 +171,10 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'recipe_image'
 
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
 
