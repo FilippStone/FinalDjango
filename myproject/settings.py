@@ -172,7 +172,7 @@ INTERNAL_IPS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'recipe_image'
+MEDIA_ROOT = BASE_DIR / 'recipe_images'
 
 CSRF_COOKIE_SECURE = True
 
